@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("org.sonarqube") version "4.4.1.3373"
+//    id("org.sonarqube") version "4.4.1.3373"
 }
 
 android {
@@ -36,15 +36,15 @@ android {
     }
 }
 
-sonar {
-    properties {
-        property("sonar.projectKey", "adurandet_myapplication")
-        property("sonar.organization", "adurandet")
-        property("sonar.host.url", "https://sonarcloud.io")
-        property("sonar.sourceEncoding", "UTF-8")
-        property("sonar.coverage.jacoco.xmlReportPaths", "${project.layout.buildDirectory}/reports/kover/report.xml")
-    }
-}
+//sonar {
+//    properties {
+//        property("sonar.projectKey", "adurandet_myapplication")
+//        property("sonar.organization", "adurandet")
+//        property("sonar.host.url", "https://sonarcloud.io")
+//        property("sonar.sourceEncoding", "UTF-8")
+//        property("sonar.coverage.jacoco.xmlReportPaths", "${project.layout.buildDirectory}/reports/kover/reportDebug.xml")
+//    }
+//}
 
 dependencies {
     implementation(libs.androidx.core.ktx)
