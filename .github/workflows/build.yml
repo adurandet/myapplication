@@ -18,8 +18,8 @@ jobs:
         with:
           java-version: 17
           distribution: 'zulu' # Alternative distribution options are available
-      - name: Run Kover test coverage
-        run: ./gradlew koverXmlReportDebug --info
+#      - name: Run Kover test coverage
+#        run: ./gradlew koverXmlReportDebug --info
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
         with:
@@ -36,4 +36,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew build sonar --info
+        run: ./gradlew build koverXmlReportDebug --info sonar --info
