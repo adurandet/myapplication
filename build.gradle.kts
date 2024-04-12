@@ -16,4 +16,4 @@ sonar {
     }
 }
 
-project.tasks["sonarqube"].dependsOn "koverReport"
+project.tasks["sonarqube"].dependsOn "koverXmlReport"
