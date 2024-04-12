@@ -42,7 +42,7 @@ sonar {
         property("sonar.organization", "adurandet")
         property("sonar.host.url", "https://sonarcloud.io")
         property("sonar.sourceEncoding", "UTF-8")
-        property("sonar.coverage.jacoco.xmlReportPaths", "${projectDir.parentFile.path}/build/reports/kover/reportDebug.xml")
+        property("sonar.java.coveragePlugin", "jacoco")
     }
 }
 
