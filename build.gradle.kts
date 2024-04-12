@@ -22,7 +22,7 @@ subprojects {
     apply(plugin = "org.jetbrains.kotlinx.kover")
     sonar {
         properties {
-            property("sonar.coverage.jacoco.xmlReportPaths", "${project.layout.buildDirectory}/reports/kover/reportDebug.xml")
+            property("sonar.coverage.jacoco.xmlReportPaths", "${projectDir.parentFile.path}/build/reports/kover/reportDebug.xml")
         }
     }
 }

@@ -36,15 +36,15 @@ android {
     }
 }
 
-//sonar {
-//    properties {
-//        property("sonar.projectKey", "adurandet_myapplication")
-//        property("sonar.organization", "adurandet")
-//        property("sonar.host.url", "https://sonarcloud.io")
-//        property("sonar.sourceEncoding", "UTF-8")
-//        property("sonar.coverage.jacoco.xmlReportPaths", "${project.layout.buildDirectory}/reports/kover/reportDebug.xml")
-//    }
-//}
+sonar {
+    properties {
+        property("sonar.projectKey", "adurandet_myapplication")
+        property("sonar.organization", "adurandet")
+        property("sonar.host.url", "https://sonarcloud.io")
+        property("sonar.sourceEncoding", "UTF-8")
+        property("sonar.coverage.jacoco.xmlReportPaths", "${project.layout.buildDirectory}/reports/kover/reportDebug.xml")
+    }
+}
 
 dependencies {
     implementation(libs.androidx.core.ktx)
