@@ -12,8 +12,18 @@ sonar {
         property("sonar.organization", "adurandet")
         property("sonar.host.url", "https://sonarcloud.io")
         property("sonar.sourceEncoding", "UTF-8")
-        property("sonar.coverage.jacoco.xmlReportPaths", "${project.layout.buildDirectory}/reports/kover/report.xml")
+        property("sonar.java.coveragePlugin", "jacoco")
     }
 }
 
-project.tasks["sonarqube"].dependsOn "koverReport"
+subprojects {
+    // exclude Arkose aar Module
+    apply(plugin = "org.jetbrains.kotlinx.kover")
+    sonar {
+        properties {
+            property("sonar.coverage.jacoco.xmlReportPaths", "${projectDir.parentFile.path}/app/build/reports/kover/reportDebug.xml")
+        }
+    }
+}
+
+project.tasks["sonar"].dependsOn "koverXmlReportDebug"

@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+//    id("org.sonarqube") version "4.4.1.3373"
 }
 
 android {
@@ -35,8 +36,17 @@ android {
     }
 }
 
-dependencies {
+sonar {
+    properties {
+        property("sonar.projectKey", "adurandet_myapplication")
+        property("sonar.organization", "adurandet")
+        property("sonar.host.url", "https://sonarcloud.io")
+        property("sonar.sourceEncoding", "UTF-8")
+        property("sonar.java.coveragePlugin", "jacoco")
+    }
+}
 
+dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
