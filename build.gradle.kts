@@ -16,4 +16,14 @@ sonar {
     }
 }
 
+subprojects {
+    // exclude Arkose aar Module
+    apply(plugin = "org.jetbrains.kotlinx.kover")
+    sonar {
+        properties {
+            property("sonar.coverage.jacoco.xmlReportPaths", "${project.layout.buildDirectory}/reports/kover/report.xml")
+        }
+    }
+}
+
 project.tasks["sonarqube"].dependsOn "koverXmlReport"
